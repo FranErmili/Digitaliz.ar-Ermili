@@ -1,0 +1,321 @@
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
+
+html {
+    font-size: 62.5%;
+    font-family: 'roboto', 'lato', sans-serif, Arial, Helvetica;
+    height: 100%;
+}
+    
+body {
+        min-height: 100%;
+    }
+    
+/*GRILLA*/ 
+#wrapper {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "banner1"
+    "main"
+    "banner2"
+    "footer"
+    ;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    
+}
+
+header {
+    grid-area: "header";
+}
+
+Picture#banner1 {
+    grid-area: "banner1";
+}
+
+section#main {
+    grid-area: "main";
+}
+
+picture#banner2 {
+    grid-area: "banner2";
+}
+
+footer {
+    grid-area: "footer";
+}
+
+/*GRILLA*/ 
+
+
+/*CLASES*/
+
+.header { 
+    background-color: #222831; 
+}
+
+.navbar {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 120%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 160px;
+    height:auto;
+    background-color: #eee;
+    margin: 2px;
+}
+
+.menu {
+    display: flex;
+    background-color: #393E46;
+}
+
+.menu__item {
+    list-style-type: none;
+    border: 1px solid #222831;
+}
+
+.menu__link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 115%;
+    margin: 20px;
+}
+
+.menu__link:hover {
+    color: #289DD2;
+    font-weight: bold;
+    border-bottom: 2px solid #289DD2;
+}
+
+.this__page {
+    color: #289DD2;
+    font-weight: bold;
+    border-bottom: 2px solid #289DD2;
+}
+
+.section {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+.article {  
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    background-color:#eee;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.subtittle { 
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Roboto',sans-serif;
+    border-bottom: 1px solid black;  
+}
+
+.paragraph {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+.buttom {
+    padding: 3px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+.banner__size {
+    width: 100%;
+    height: 300px;
+}
+
+.footer {
+    height: 150px;
+    color: white;
+    background-color: #222831; 
+}
+
+.social__bar { 
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 120%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor__social {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+}
+
+.contenedor__socialicon {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.social__icon {
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+}
+
+.copyright { 
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+h2 {
+    width: auto;
+    height: auto;
+}
+/*CLASES*/
+
+/*PÁGINA SOBRE NOSOTROS*/
+
+.article__empresa {
+    padding: 15px;
+    border: 1px solid black;
+    display: flex;
+    width: 80%;
+    align-items:center;
+    justify-content: space-around;
+    margin: 10px;
+    background-color:#eee;
+}
+
+.foto__empresa {
+    width: 250px;
+    height: auto;
+}
+
+.paragraph__empresa {
+    width: 600px;
+    height: auto;
+    margin-left: 10px;
+    font-size: 120%;
+}
+
+/*SOBRE NOSOTROS*/
+
+.form__contenedor { 
+    margin-top: 20px;
+    width: 560px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 120%;
+}
+
+.label {
+    margin: 10px;
+}
+
+.input {
+    margin: 10px;
+}
+
+/*MEDIA QUERIS*/
+
+@media screen and (max-width: 992px) {
+
+    .navbar { 
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    
+    .menu {
+        width: auto;
+    }
+
+    .logo {
+        width: 100px;
+    }
+        
+    .menu__link {
+        font-size: 70%;
+        margin: 5px;
+    }
+
+    .section {
+        width: auto;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer{
+        height: auto;
+    }
+
+    .social__bar { 
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .contenedor__social {
+        flex-wrap: nowrap;
+        align-items: center;
+        height: auto;
+    }
+
+    .article__empresa {
+        flex-direction: column;
+    }
+
+    .paragraph__empresa {
+        margin-top: 10px;
+        width: 200px;
+    }
+
+    .form__contenedor {
+        width: 70%;
+        margin: 0 auto;
+
+    }
+
+    .textarea {
+        width: 200px;
+    }
+}
+
+/*MEDIA QUERIS*/
