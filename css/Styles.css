@@ -235,8 +235,6 @@ h2 {
     font-size: 120%;
 }
 
-/*SOBRE NOSOTROS*/
-
 .form__contenedor { 
     margin-top: 20px;
     width: 560px;
@@ -252,6 +250,20 @@ h2 {
 
 .input {
     margin: 10px;
+}
+
+/*ANIMACIONES*/
+
+.box__shadow {
+    box-shadow: 10px 10px 10px 1px #000;
+}
+
+.border__radius {
+    border-radius: 25px;
+}
+
+.drop__shadow {
+filter: drop-shadow(5px 5px 10px #000);
 }
 
 /*MEDIA QUERIS*/
