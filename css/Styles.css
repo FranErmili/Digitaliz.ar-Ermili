@@ -266,6 +266,44 @@ h2 {
 filter: drop-shadow(5px 5px 10px #000);
 }
 
+.transition {
+    height: 190px;
+    transition: height 3s ease 1s;
+}  
+
+.transition:hover {
+    height: auto;
+}
+
+@keyframes slide__left{
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.slide__left {
+	animation: slide__left 1s ease 0s 1 normal forwards;
+}
+
+@keyframes slide__right {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.slide__right {
+	animation: slide__right 1s ease 0s 1 normal forwards;
+}
 /*MEDIA QUERIS*/
 
 @media screen and (max-width: 992px) {
