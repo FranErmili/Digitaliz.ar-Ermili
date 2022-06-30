@@ -76,8 +76,8 @@ html {
     margin-top:15px;
 }
 
-.icon {
- margin: 0 auto;
+.p-size {
+    width: 40vw;
 }
 
 .list-style {
@@ -109,6 +109,27 @@ html {
     border-top: 1px solid black;
 }
 
+.radius {
+    border-radius: 20px; 
+}
+
+.pic-teamwork {
+    width: 500px;
+    height: auto;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.margin-left {
+    margin-left: 50px;
+}
+
+/*keyframes*/
 @keyframes slide-left{
 	0% {
 		opacity: 0;
@@ -141,24 +162,69 @@ html {
 	animation: slide-right 2s ease 0s 1 normal forwards;
 }
 
-@keyframes art-anim {
-	0% {
-		transform: scale(0);
-	}
-
-	100% {
-		transform: scale(1);
-	}
+@keyframes slide-in-bottom {
+    0% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  
+.slide-in-bottom1 {
+    animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.art-anim {
-    animation: art-anim 3s ease 2s 1 normal forwards;
+.slide-in-bottom2 {
+    animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
 }
 
-.art-anim1 {
-    animation: art-anim 3s ease 3s 1 normal forwards;
+.slide-in-bottom3 {
+    animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
 }
 
-.art-anim2 {
-    animation: art-anim 3s ease 4s 1 normal forwards;
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 }
+
+.fade-in {
+	animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+.slide-in-bottom {
+	animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes shadow-drop-2-center {
+    0% {
+      transform: translateZ(0);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      transform: translateZ(50px);
+      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+.article:hover{
+	animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
