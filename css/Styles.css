@@ -63,6 +63,26 @@ html {
     align-items: center;
 }
 
+.article-serv{
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.30);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+}
+.article-serv:hover{
+    background-color: rgba(0, 0, 0, 0.30);
+    color: white;
+    animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.article-content { 
+    width: 60%;
+}
+
 .margin-top{
  margin-top: 20px;
 }
@@ -143,7 +163,7 @@ html {
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.10);
-}
+}    
 
 .form-contenedor { 
     margin-top: 20px ;
@@ -270,6 +290,8 @@ html {
 .article-blog:hover{
 	animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+.
 
 @media screen and (min-width: 992px) {
  .flex {
