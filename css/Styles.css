@@ -72,6 +72,7 @@ html {
     margin-top: 20px;
     display:flex;
     justify-content: space-between;
+    align-items: center;
 }
 .article-serv:hover{
     background-color: rgba(0, 0, 0, 0.30);
@@ -188,6 +189,10 @@ html {
     margin: 10px;
 }
 
+.footer {
+    text-align: center;
+}
+
 /*keyframes*/
 @keyframes slide-left{
 	0% {
@@ -291,8 +296,6 @@ html {
 	animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.
-
 @media screen and (min-width: 992px) {
  .flex {
     flex-direction: row;
@@ -312,5 +315,9 @@ html {
     border: 0;
     border-left: 1px solid rgba(0, 0, 0, 0.30);
     border-right: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+.footer {
+    align-items: center;
 }
 }
