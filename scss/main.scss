@@ -121,15 +121,16 @@ img.banner {
     margin: 5px;
 }
 
-.just-center{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.footer {
+    width: 25rem;
+    margin:0 auto;
 }
 
-.block {
-    display: block;
- }
+.just-center{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
 
 .copyright { 
     width: 80%;
