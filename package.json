@@ -14,10 +14,8 @@
   },
   "author": "Francisco Ermili franermili@gmail.com",
   "license": "ISC",
-
   "devDependencies": {
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.18"
   }
 }
-
