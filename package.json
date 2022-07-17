@@ -1,7 +1,7 @@
 {
-  "name": "proyecto-final-coder",
+  "name": "proyectofinal",
   "version": "1.0.0",
-  "description": "Aplicando Sass al proyecto",
+  "description": "Proyecto final de coderhouse desarrollo web",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
     "type": "git",
     "url": "no"
   },
+  
   "author": "Francisco Ermili franermili@gmail.com",
   "license": "ISC",
   "devDependencies": {

@@ -38,39 +38,54 @@ $font-family: 'Roboto', sans-serif, Helvetica;
     box-sizing: border-box
 }
 
-html, body { 
+html,
+body {
     font-size: 62.5%;
     font-family: $font-family;
     width: 100vw;
     min-height: 100vh;
 }
 
-//fuentes//
-@mixin font ($size,$weight,$style) {
+$bkg: (
+  'blue2': $blue2,
+  'blue5': $blue5,
+  'blue9': $blue9,
+  'gris2': $gray2,
+  'gris4': $gray4,
+  'gris6': $gray6,
+);
+
+@each $name, $value in $bkg {
+  .bg-#{$name} {
+    background-color: $value;
+  }
+}  
+
+@mixin font ($size, $weight, $style) {
     font-size: $size;
     font-weight: $weight;
     font-style: $style
 }
 
 .h1 {
-    @include font(2rem,700,normal);
+    @include font(2rem, 700, normal);
     padding-bottom: 0.5rem;
     color: $white3;
     border-bottom: 0.3rem solid $blue3;
 }
 
 .h2 {
-    @include font(1.6rem,700,normal);
-    color:$white2;
+    @include font(1.6rem, 700, normal);
+    color: $white2;
 }
 
 .txt {
-    @include font(1.6rem,400,normal);
+    @include font(1.6rem, 400, normal);
     color: $gray1;
 }
 
 .txt-italic {
-    @include font(1.6rem,400,italic);
+    @include font(1.6rem, 400, italic);
     color: $white2;
 }
 
@@ -83,11 +98,11 @@ html, body {
 }
 
 .bkg-transparent {
-    background: rgba(0,0,0,0.8);   
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .bkg-gradient {
-    background: radial-gradient( #6C757D 0%, #495057 50%, #343A40 100%);
+    background: radial-gradient(#6C757D 0%, #495057 50%, #343A40 100%);
 }
 
 .shadow {
@@ -95,8 +110,8 @@ html, body {
 }
 
 //flex// 
-@mixin flex ($flex,$content,$item,$direction) {
-    display:$flex;
+@mixin flex ($flex, $content, $item, $direction) {
+    display: $flex;
     justify-content: $content;
     align-items: $item;
     flex-direction: $direction;
@@ -133,7 +148,7 @@ html, body {
 
 .menu {
     padding: 1rem;
-    @include flex (flex,center,center,row);
+    @include flex (flex, center, center, row);
 }
 
 .navbar {
@@ -163,7 +178,7 @@ html, body {
 .article {
     margin: 2rem 1rem;
     padding: 1.5rem;
-    @include flex (flex,center,center,column);
+    @include flex (flex, center, center, column);
     list-style: disc inside;
     background-color: $gray4;
     border-radius: 0.5rem;
@@ -205,7 +220,7 @@ a.button {
         border-color: $white2;
         animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
-} 
+}
 
 .btn-contact {
     display: none;
@@ -226,13 +241,13 @@ a.button {
 }
 
 @keyframes scale {
-	50% {
-		transform: scale(0.8);
-	}
+    50% {
+        transform: scale(0.8);
+    }
 
-	100% {
-		transform: scale(1);
-	}
+    100% {
+        transform: scale(1);
+    }
 }
 
 //queris//
@@ -249,7 +264,7 @@ a.button {
     }
 
     .queri-footer {
-       width: 80vw;
+        width: 80vw;
     }
 
     .queri-main {
@@ -258,7 +273,7 @@ a.button {
 
     .menu {
         padding: 1.5rem;
-        @include flex (flex,space-evenly,center,row);
+        @include flex (flex, space-evenly, center, row);
     }
 
     .btn-contact {
@@ -274,4 +289,4 @@ a.button {
     .divisor {
         visibility: hidden;
     }
-} 
+}
