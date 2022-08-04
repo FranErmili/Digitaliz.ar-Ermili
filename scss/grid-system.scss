@@ -1,0 +1,71 @@
+//GRYD SYSTEM//
+$cols: 12;
+$gap: 10px;
+
+.container{
+    width: 85vw;
+    margin: 10rem;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-fluid {
+    @extend .container;
+    width: 100vw;
+}
+
+.gs-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.col-ex {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid red;
+}
+
+@mixin grid-system ($mq){
+  .#{$mq} {
+      flex: 1 0 0;
+  }
+  
+  @for $col from 1 through $cols {
+    .#{$mq}-#{$col}{
+        flex: 0 0 (100% / $cols) * $col;
+        max-width:(100% / $cols) * $col; 
+    }   
+  }
+}
+
+@include grid-system(col);    
+
+@media screen and (min-width: 340px){
+    @include grid-system (sm-col)
+}
+
+@media screen and (min-width: 768px){
+    @include grid-system (md-col)
+}
+
+@media screen and (min-width: 992px){
+    @include grid-system (lg-col)
+}
+
+@media screen and (min-width: 1200px){
+    @include grid-system (xl-col)
+}

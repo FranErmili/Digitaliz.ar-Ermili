@@ -1,0 +1,399 @@
+
+//GRYD SYSTEM//
+$cols: 12;
+$gap: 10px;
+
+.container{
+    width: 80vw;
+    margin: 0 auto;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+}
+
+.container-fluid {
+    @extend .container;
+    width: 100vw;
+}
+
+.gs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: $gap / -2;
+    margin-right: $gap / -2;
+}
+
+.col {
+    width: 100%;
+    max-width: 100%;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+    flex: 1 0 0;
+}
+
+.col-ex {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid red;
+}
+
+@mixin grid-system ($mq){
+  .#{$mq} {
+      flex: 1 0 0;
+  }
+  
+  @for $col from 1 through $cols {
+    .#{$mq}-#{$col}{
+        flex: 0 0 (100% / $cols) * $col;
+        max-width:(100% / $cols) * $col; 
+    }
+      
+  }
+}
+
+
+@include grid-system(col);
+      
+
+@media screen and (min-width: 340px){
+    @include grid-system (sm-col)
+}
+
+@media screen and (min-width: 768px){
+    @include grid-system (md-col)
+}
+
+@media screen and (min-width: 992px){
+    @include grid-system (lg-col)
+}
+
+
+//BOTONES//
+
+button:focus{
+    outline: 0;
+}
+
+.centered-elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+$pink    :   #ff29ad;
+$lemon   :   #ebde30;
+$green   :   #00ffb3;
+$blue    :   #00aeff;
+
+.content{
+    background-color: #0a0a0a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.link{
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 28px;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto 48px;
+    z-index: 0;
+    transition: all 450ms ease;
+
+    &::after,
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        transition: width 540ms, opacity 300ms ease;
+    }
+}
+
+/* LINK 1 */
+.link--1{
+    padding: 0 6px;
+
+    &::before,
+    &::after{
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        height: 0.1em;
+        width: 0;
+    }
+
+    &::before{
+        left: 0;
+    }
+
+    &::after{
+        background-color: $pink;
+        right: 0;
+    }
+
+    &:hover{
+        color: $pink;
+        
+        &::before{
+            width: 60%;
+            transition: width 250ms ease;
+            background-color: $pink;
+        }
+
+        &::after{
+            width: 100%;
+            background-color: transparent;
+        }
+    }
+}
+
+/* LINK 2    */
+.link--2{
+    &::before,
+    &::after{
+        height: 0.1em;
+        bottom: -1px;
+    }
+
+    &::before{
+        width: 0;
+        background-color: $lemon;
+    }
+
+    &::after{
+        width: 100%;
+        border: 1px solid $lemon;
+        border-top: 0;
+        opacity: 0;
+    }
+
+    &:hover{
+        color: $lemon;
+
+        &::before{
+            width: 0;
+            animation: width 1500ms ease forwards;
+        }
+
+        &::after{
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes width{
+    0%{
+        width: 0;
+    }
+
+    50%{
+        width: 100%;
+    }
+
+    100%{
+        width: 70%;
+    }
+}
+
+/* LINK 3 */
+.link--3{
+    height: 56px;
+    width: 164px;
+    display: grid;
+    place-items: center;
+
+    &-b-tr,
+    &-b-bl{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            background-color: $green;
+            transition: all 400ms ease-in-out;
+        }
+    }
+
+    &-b-tr::before{
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+    }
+
+    &-b-tr::after{
+        right: 0;
+        top: 0;
+        height: 0;
+        width: 1px;
+    }
+
+    &-b-bl::before{
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 1px;
+    }
+
+    &-b-bl::after{
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 1px;
+    }
+
+    &:hover{
+        color: $green;
+
+        .link--3-b-tr::before,
+        .link--3-b-bl::before{
+            width: 100%;
+        }
+
+        .link--3-b-tr::after,
+        .link--3-b-bl::after{
+            height: 100%;
+        }
+    }
+}
+
+/* LINK 4 */
+.link--4{
+    &::before{
+        content: attr(data);
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        color: $blue;
+        z-index: 1;
+        overflow: hidden;
+        text-shadow: 0 0 2px $blue;
+        transition: all 480ms ease-in-out;
+    }
+  
+    &:hover::before{
+        width: 100%;
+    }
+}
+
+//CARDS EFFECT PARALLAX//
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+.container__cards{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    width: 300px;
+    margin: 10px;
+    transition: all 300ms;
+}
+
+.card:hover{
+    width: 350px;
+}
+
+.card .cover{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .cover img{
+    width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+    transition: all 400ms;
+}
+
+.card:hover .cover img{
+    top: 0px;
+    filter: none;
+}
+
+.card .img__back{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+.card:nth-of-type(1) .img__back{
+    background-image: url(../images/bg1.jpg);
+}
+
+.card:nth-of-type(2) .img__back{
+    background-image: url(../images/bg2.jpg);
+}
+
+.card:nth-of-type(3) .img__back{
+    background-image: url(../images/bg3.jpg);
+}
+
+.card:hover .img__back{
+    bottom: -40px;
+}
+
+.card .description{
+    background: white;
+    margin-top: -10px;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    transition: all 300ms;
+}
+
+.card:hover .description{
+    padding: 40px;
+}
+
+.card .description h2{
+    margin-top: 10px;
+}
+
+.card .description p{
+    margin-top: 10px;
+}
+
+.card .description input{
+    padding: 10px 40px;
+    margin-top: 20px;
+    border: none;
+    background: #A6359D;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 300ms;
+}
+
+.card .description input:hover{
+    background: #83277b;
+}

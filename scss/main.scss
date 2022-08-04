@@ -11,7 +11,7 @@ $blue9: #001845ff;
 $blue10: #001233ff;
 
 //grayscale//
-$white: #f8f9faff;
+$white1: #f8f9faff;
 $white2: #e9ecefff;
 $white3: #dee2e6ff;
 $gray1: #ced4daff;
@@ -26,41 +26,12 @@ $black: #212529ff;
 $color-link: #0645AD;
 $Color-link-visited: #800080;
 
-//font// 
-$font-family: 'Roboto', sans-serif, Helvetica;
+//rrss-Colors//
+$wsp: #25D366;
+$twitter: #1DA1F2;
+$facebook: #4267B2;
+$youtube: #FF0000;
 
-//reset//
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-html,
-
-body {
-    font-size: 62.5%;
-    font-family: $font-family;
-    width: 100vw;
-    min-height: 100vh;
-}
-
-$bkg: (
-  'blue2': $blue2,
-  'blue5': $blue5,
-  'blue9': $blue9,
-  'gris2': $gray2,
-  'gris4': $gray4,
-  'gris6': $gray6,
-);
-
-@each $name, $value in $bkg {
-  .bg-#{$name} {
-    background-color: $value;
-  }
-}  
 
 @mixin font ($size, $weight, $style) {
     font-size: $size;
@@ -68,35 +39,34 @@ $bkg: (
     font-style: $style
 }
 
-.h1 { 
-    @include font(5rem, 900, normal);
-    margin-bottom: 1rem;
-} 
+.h1 {
+    @include font(3rem, 900, normal);
+
+}
 
 .h2 {
-    @include font(2rem, 700, normal);
-    margin-bottom: 1rem;
+    @include font(1.8rem, 700, normal);
+
 }
 
 .h3 {
-    @include font(1.6rem, 700, normal);
-    margin-bottom: 1rem;
+    @include font(1.4rem, 700, normal);
 }
 
 .h4 {
-    @include font(1.6rem, 400, normal);
+    @include font(1.2rem, 400, normal);
 }
 
 .txt {
-    @include font(1.6rem, 400, normal);
+    @include font(1.3rem, 500, normal);
 }
 
 .txt-italic {
-    @include font(1.6rem, 400, italic);
+    @include font(1rem, 400, italic);
 }
 
 .txt-small {
-    @include font(1.5rem, 400, normal);
+    @include font(1rem, 400, normal);
 }
 
 .txt-align {
@@ -107,78 +77,12 @@ $bkg: (
     margin: 0 auto;
 }
 
-.bkg-transparent {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.bkg-gradient {
-    background: radial-gradient(#dee2e6ff 0%,#ced4daff 50%, #adb5bdff 100% );
-}
-
-.shadow {
-    box-shadow: 0px 0px 10px 2px $black;
-}
-
 //flex// 
 @mixin flex ($flex, $content, $item, $direction) {
     display: $flex;
     justify-content: $content;
     align-items: $item;
     flex-direction: $direction;
-}
-
-.header {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../img/bannerhome.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-attachment: fixed;
-    background-size: cover;
-    @extend .shadow;
-}
-
-.bkg-img {
-    background-image: url(../img/Banner2.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-.menu {
-    padding: 1rem;
-    @include flex (flex, center, center, row);
-}
-
-.logo {
-    height: 5rem;
-    width: auto;
-    border-right: 0.2rem solid $gray4;
-    @extend .slide-left;
-}
-
-.menu-desktop {
-    display: none;
-    @extend .h3;
-    flex-wrap: nowrap;
-    @extend .slide-right
-}
-
-.row {
-    flex-wrap: wrap;
-}
-
-.menu-phone {
-    display: block;
-    @extend .slide-right;
-}
-
-.navbar {
-    text-align: end;
-    justify-content: end;
-    @extend .h2;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn-contact {
@@ -188,7 +92,7 @@ $bkg: (
 
 .white-space {
     width: 100vw;
-    padding:50px 0;
+    padding: 50px 0;
     display: block;
 }
 
@@ -198,16 +102,6 @@ $bkg: (
     @extend .fade-in;
 }
 
-.cards-inicio {
-    margin: 2rem 2rem;
-    padding: 3rem;
-    @include flex (flex, center, center, column);
-    list-style: disc inside;
-    background-color: $gray1;
-    border-radius: 0.5rem;
-    @extend .shadow;
-    @extend .fade-in;
-}
 
 a.button {
     @extend .h3;
@@ -237,17 +131,6 @@ a.button {
     @extend .fade-in;
 }
 
-.footer {
-    @extend .margin-auto;
-    padding: 1.5rem;
-    color: $white2;
-    text-align: center;
-    @extend .fade-in;
-
-    & picture {
-        display: block;
-    }
-}
 
 .banner {
     width: auto;
@@ -264,13 +147,6 @@ a.button {
     @extend .slide-in-bottom1;
 }
 
-.social-icon {
-    height: 2.5rem;
-    width: 2.5rem;
-    margin: 0.5rem;
-    @extend .slide-right;
-}
-
 .pic-teamwork {
     width: 35vw;
     height: auto;
@@ -278,77 +154,555 @@ a.button {
     @extend .fade-in;
 }
 
-//keyframe//
+//desde acá!//
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import "grid-system";
 
-@keyframes shadow-drop-2-center {
+
+//font// 
+$font-family: 'Roboto', sans-serif, Helvetica;
+
+//reset//
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html,
+
+body {
+    font-size: 62.5%;
+    font-family: $font-family;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: $white2;
+}
+
+.bkg-transparent {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.shadow {
+    box-shadow: 0px 0px 10px 2px $gray5;
+}
+
+.drop-shadow {
+    box-shadow: 0px 5px 7px 0px $gray5;
+}
+
+.shadow-blue {
+    box-shadow: 0px 0px 10px 2px $blue4;
+}
+
+.flex-elements {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/bannerhome.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.navbar {
+    width: 100%;
+    padding: 1rem 0;
+    @extend .flex-elements, .bkg-transparent, .drop-shadow;
+    overflow: hidden;
+
+    @media screen and (max-width: 340px) {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    height: 5rem;
+    margin: 1rem;
+    width: auto;
+    padding: 0.2rem;
+    border-right: 0.2rem solid $gray4;
+
+    @media screen and (min-width: 769px) {
+        height: 6rem;
+    }
+}
+
+//menu responsive //
+.menu-container {
+    list-style: none;
+    padding: 2rem;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-top: 0.2rem solid $gray4;
+        position: absolute;
+        width: 100%;
+        background: $gray6;
+        top: 90px;
+        height: 0px;
+        transition: height 1s ease 0s;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    @media screen and (max-width: 340px) {
+        top: 19.4rem;
+    }
+}
+
+.check-btn {
+    font-size: 1.2rem;
+    color: $white3;
+    display: block;
+    order: -1;
+    margin: 1rem;
+
+    @media screen and (min-width: 769px) {
+        display: none;
+    }
+}
+
+#check {
+    display: none;
+}
+
+#check:checked~.menu-container {
+
+    @media screen and (max-width: 768px) {
+        height: 50vh;
+    }
+}
+
+.menu-items {
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        line-height: 3rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        margin: 0 1rem;
+    }
+}
+
+.social-icon {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 0.5rem;
+}
+
+.btn {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.40rem;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.btn-wsp {
+    border: 1px solid $white1;
+    position: relative;
+    overflow: hidden;
+    @extend .btn, .flex-elements, .shadow;
+   
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $wsp;
+        position: absolute;
+        z-index: 1;
+        top: -80px;
+        transition: .3s ease-in-out all;
+    }
+
+    &:hover::after {
+        top: 0;
+    }
+
+    & span {
+        transition: .3s ease-in-out all;
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    & img {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+//links del menu// 
+.link {
+    position: relative;
+    display: block;
+    font-weight: 600;
+    color: $gray2;
+    text-transform: uppercase;
+    font-size: 2rem;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
+    z-index: 0;
+
+    &::after,
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        transition: width 540ms, opacity 300ms ease;
+    }
+
+    &.active {
+        color: $blue1;
+        border-bottom: 1px solid $blue1;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        font-size: 1.5rem;
+    }
+}
+
+.link-2 {
+
+    &::before,
+    &::after {
+        height: 0.1em;
+        bottom: -1px;
+    }
+
+    &::before {
+        width: 0;
+        background-color: $blue1;
+    }
+
+    &::after {
+        width: 100%;
+        border: 1px solid $blue1;
+        border-top: 0;
+        opacity: 0;
+    }
+
+    &:hover {
+        color: $blue1;
+
+        &::before {
+            width: 0;
+            animation: width 1500ms ease forwards;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes width {
     0% {
-        transform: translateZ(0);
-        box-shadow: 0 0 0 0 transparent
+        width: 0;
     }
 
-    100% {
-        transform: translateZ(50px);
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, .35)
-    }
-}
-
-@keyframes scale {
     50% {
-        transform: scale(0.8);
+        width: 100%;
     }
 
     100% {
-        transform: scale(1);
+        width: 70%;
     }
 }
 
-/*keyframes*/
-@keyframes slide-left{
-	0% {
-		opacity: 0;
-		transform: translateX(-250px);
-	}
+.bkg-img{
+    background-image: url(../img/Banner2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
 
-	100% {
-		opacity: 2;
-		transform: translateX(0);
-	}
+.footer {
+    @extend .bkg-transparent, .flex-elements;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        flex-wrap:wrap;
+    }
+}
+
+.social-bar {
+    border-bottom: 0.5px solid $gray2;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.social-container {
+    @extend .flex-elements;
+    margin-top: 1rem;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.social-tittle {
+    padding: 0.5rem 1rem;
+    @extend .h3;
+    color: $gray2;
+    border-bottom: 1px solid $blue3;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    &:hover {
+        @extend .shadow;
+        transition: .3s ease all;
+    }
+}
+
+//cards//
+.card {
+    margin: 1.5rem;
+    padding: 3.5rem 1.5rem;
+    border-radius: 0.5rem;
+    @extend .shadow , .flex-elements;   
+}
+
+.card-inicio {
+    @extend .card;
+    width: 80vw;
+    margin: 5rem 2.5rem;
+    background-color: $white1;
+    flex-direction: column;
+    list-style: disc inside;
+
+    @media screen and (min-width: 524px) {
+        width: 60vw;
+    }
+        
+    @media screen and (min-width: 768px){
+        width: 45vw;
+    }
+
+    @media screen and (min-width: 992px){
+        width: 35vw;
+    }
+
+    &:hover {
+        transition: .3s ease all;
+        @extend .shadow-blue;
+        transform: scale(1.05);
+        background-color: $white3;
+    }
+}
+
+.card-icon {
+    width: auto;
+    max-width: 15rem;
+    margin-top: -90px;
+    transition: .3s ease all;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 10));
+
+
+    &:hover {
+        transform: translateY(-1rem);
+    }
+}
+
+.card-home-content {
+    @extend .flex-elements;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.card-tittle {
+    @extend .h2;
+    color: $gray5;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $blue5
+}
+
+.card-text {
+    @extend .txt;
+    color: $gray6;
+}
+
+.card-btn {
+    @extend .btn;
+    background-color: $blue3;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: -45px;
+
+    &:hover {
+        transform: translateY(1rem);
+    }
+}
+
+//Efectos//
+
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 2;
+        transform: translateX(0);
+    }
 }
 
 .slide-left {
-	animation: slide-left 2s ease 0s 1 normal forwards;
+    animation: slide-left 2s ease 0s 1 normal forwards;
 }
 
 @keyframes slide-right {
-	0% {
-		opacity: 0;
-		transform: translateX(250px);
-	}
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
 
-	100% {
-		opacity: 2;
-		transform: translateX(0);
-	}
+    100% {
+        opacity: 2;
+        transform: translateX(0);
+    }
 }
 
 .slide-right {
-	animation: slide-right 2s ease 0s 1 normal forwards;
+    animation: slide-right 2s ease 0s 1 normal forwards;
 }
 
 @keyframes slide-in-bottom {
     0% {
-      transform: translateY(1000px);
-      opacity: 0;
+        transform: translateY(1000px);
+        opacity: 0;
     }
+
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
-  
+
 .slide-in-bottom1 {
     animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1.1);
+	}
+}
+.scale {
+    animation: scale 1s ease 0s 1 normal none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*keyframes*/
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 2;
+        transform: translateX(0);
+    }
+}
+
+.slide-left {
+    animation: slide-left 2s ease 0s 1 normal forwards;
+}
+
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    100% {
+        opacity: 2;
+        transform: translateX(0);
+    }
+}
+
+.slide-right {
+    animation: slide-right 2s ease 0s 1 normal forwards;
+}
+
 
 .slide-in-bottom2 {
     animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
@@ -358,69 +712,3 @@ a.button {
     animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
 }
 
-@keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-}
-
-.fade-in {
-	animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-
-//queris//
-
-@media screen and (min-width: 992px) {
-
-    .queri-header {
-        width: 90vw;
-        margin: 0 auto;
-    }
-
-    .footer {
-        text-align: start;
-    }
-
-    .queri-footer {
-        width: 80vw;
-    }
-
-    .menu {
-        padding: 1.5rem;
-        @include flex (flex, space-evenly, center, row);
-    }
-
-    .btn-contact {
-        display: block;
-        text-align: end;
-    }
-
-    .logo {
-        height: 7rem;
-
-    }
-
-    .divisor {
-        visibility: hidden;
-    }
-
-    .menu-desktop {
-        display: block;
-    }
-
-    .menu-phone {
-        display: none;
-    }
-
-    .row {
-        flex-wrap: nowrap;
-    }
-
-    .wrap {
-        flex-wrap: wrap;
-    }
-}
