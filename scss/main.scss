@@ -32,51 +32,6 @@ $twitter: #1DA1F2;
 $facebook: #4267B2;
 $youtube: #FF0000;
 
-
-@mixin font ($size, $weight, $style) {
-    font-size: $size;
-    font-weight: $weight;
-    font-style: $style
-}
-
-.h1 {
-    @include font(3rem, 900, normal);
-
-}
-
-.h2 {
-    @include font(1.8rem, 700, normal);
-
-}
-
-.h3 {
-    @include font(1.4rem, 700, normal);
-}
-
-.h4 {
-    @include font(1.2rem, 400, normal);
-}
-
-.txt {
-    @include font(1.3rem, 500, normal);
-}
-
-.txt-italic {
-    @include font(1rem, 400, italic);
-}
-
-.txt-small {
-    @include font(1rem, 400, normal);
-}
-
-.txt-align {
-    text-align: center;
-}
-
-.margin-auto {
-    margin: 0 auto;
-}
-
 //flex// 
 @mixin flex ($flex, $content, $item, $direction) {
     display: $flex;
@@ -85,42 +40,10 @@ $youtube: #FF0000;
     flex-direction: $direction;
 }
 
-.btn-contact {
-    display: none;
-    @extend .fade-in
-}
-
 .white-space {
     width: 100vw;
     padding: 50px 0;
     display: block;
-}
-
-.main-tittle {
-    text-align: center;
-    justify-content: center;
-    @extend .fade-in;
-}
-
-
-a.button {
-    @extend .h3;
-    border-radius: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    font-family: inherit;
-    background-color: $white2;
-    color: $blue2;
-    border: 0.1rem solid $blue2;
-    margin: 1rem;
-    @extend .fade-in;
-
-    &:hover {
-        text-decoration: none;
-        background-color: $blue2;
-        color: $white2;
-        border-color: $white2;
-        animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
 }
 
 .divisor {
@@ -130,7 +53,6 @@ a.button {
     margin: 1rem auto;
     @extend .fade-in;
 }
-
 
 .banner {
     width: auto;
@@ -144,7 +66,7 @@ a.button {
     @extend .txt-italic;
     border-top: 1px solid $gray4;
     padding: 1rem 0;
-    @extend .slide-in-bottom1;
+    @extend .slide-in-bottom;
 }
 
 .pic-teamwork {
@@ -155,12 +77,16 @@ a.button {
 }
 
 //desde acá!//
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+//Roboto//
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+//Poppins//
 @import "grid-system";
-
+//Grid System
 
 //font// 
-$font-family: 'Roboto', sans-serif, Helvetica;
+$font-family: 'Roboto', sans-serif;
+$font-especial: 'Poppins', sans-serif;
 
 //reset//
 *,
@@ -172,10 +98,9 @@ $font-family: 'Roboto', sans-serif, Helvetica;
 }
 
 html,
-
+    
 body {
     font-size: 62.5%;
-    font-family: $font-family;
     width: 100vw;
     min-height: 100vh;
 }
@@ -183,6 +108,10 @@ body {
 a {
     text-decoration: none;
     color: $white2;
+}
+
+main {
+    overflow: hidden;
 }
 
 .bkg-transparent {
@@ -207,6 +136,62 @@ a {
     align-items: center;
 }
 
+@mixin font ($size, $weight, $family) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+}
+
+h1 {
+    @include font(8rem, 700, $font-especial);
+    color: $gray1;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: 564px) {
+        font-size: 5rem;
+    }
+}
+
+//título main//
+
+h2 {
+    @include font(1.8rem, 400, $font-especial);
+    color: $white1;
+    letter-spacing: 2px;
+}
+
+//subtitulos//
+
+h3 {
+    @include font(1.8rem, 600, $font-family);
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        font-size: 1.5rem;
+    }
+}
+
+//botones del nav//
+
+h4 {
+    @include font(1.2rem, 400, $font-family);
+}
+
+//subtitlo cards//
+
+p {
+    @include font(1.3rem, 500, $font-family);
+    letter-spacing: 1px;
+    line-height: 2rem;
+}
+
+//texto nomarl//
+
+.txt-italic {
+    @include font(1rem, 400, italic);
+}
+
+//texto destacado//
+
 .header {
     width: 100%;
     height: 100vh;
@@ -215,6 +200,8 @@ a {
     background-position: top center;
     background-attachment: fixed;
     background-size: cover;
+    overflow: hidden;
+    @extend .fade-in;
 }
 
 .navbar {
@@ -226,6 +213,7 @@ a {
     @media screen and (max-width: 340px) {
         flex-direction: column;
     }
+
 }
 
 .logo {
@@ -234,6 +222,7 @@ a {
     width: auto;
     padding: 0.2rem;
     border-right: 0.2rem solid $gray4;
+    @extend .slide-left; 
 
     @media screen and (min-width: 769px) {
         height: 6rem;
@@ -244,6 +233,8 @@ a {
 .menu-container {
     list-style: none;
     padding: 2rem;
+    z-index: 1;
+    @extend .fade-in;
 
     @media screen and (max-width: 768px) {
         display: flex;
@@ -323,8 +314,8 @@ a {
     border: 1px solid $white1;
     position: relative;
     overflow: hidden;
-    @extend .btn, .flex-elements, .shadow;
-   
+    @extend .btn, .flex-elements, .shadow, .slide-right;
+
     &::after {
         content: "";
         width: 100%;
@@ -358,16 +349,16 @@ a {
 
 //links del menu// 
 .link {
+    text-transform: uppercase;
     position: relative;
     display: block;
-    font-weight: 600;
     color: $gray2;
-    text-transform: uppercase;
-    font-size: 2rem;
     cursor: pointer;
     width: fit-content;
     margin: 0 auto;
     z-index: 0;
+
+    @extend .fade-in;
 
     &::after,
     &::before {
@@ -379,11 +370,7 @@ a {
 
     &.active {
         color: $blue1;
-        border-bottom: 1px solid $blue1;
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 992px) {
-        font-size: 1.5rem;
+        border-bottom: 2px solid $blue1;
     }
 }
 
@@ -435,7 +422,29 @@ a {
     }
 }
 
-.bkg-img{
+.main-tittle {
+    position: absolute;
+    bottom: 5rem;
+    text-align: center;
+    padding: 2rem;
+
+    @extend .slide-in-bottom;
+}
+
+.main-divisor {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    width: 20%;
+    border-top: 3px solid $blue2;
+    transform-origin: center;
+    transition: .3s ease-in-out all;
+
+    &:hover {
+        width: 70%;
+    }
+}
+
+.bkg-img {
     background-image: url(../img/Banner2.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -448,7 +457,7 @@ a {
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
-        flex-wrap:wrap;
+        flex-wrap: wrap;
     }
 }
 
@@ -457,6 +466,7 @@ a {
     padding: 1rem;
     margin: 1rem;
     text-align: center;
+    @extend .slide-right;
 }
 
 .social-container {
@@ -470,10 +480,10 @@ a {
 }
 
 .social-tittle {
+    font-size: 1.6rem;
+    font-weight: 500;
     padding: 0.5rem 1rem;
-    @extend .h3;
     color: $gray2;
-    border-bottom: 1px solid $blue3;
 }
 
 .social-item {
@@ -494,31 +504,26 @@ a {
     margin: 1.5rem;
     padding: 3.5rem 1.5rem;
     border-radius: 0.5rem;
-    @extend .shadow , .flex-elements;   
-}
-
-.card-inicio {
-    @extend .card;
+    @extend .shadow, .flex-elements, .slide-in-bottom;
     width: 80vw;
     margin: 5rem 2.5rem;
     background-color: $white1;
     flex-direction: column;
-    list-style: disc inside;
 
     @media screen and (min-width: 524px) {
         width: 60vw;
     }
-        
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: 768px) {
         width: 45vw;
     }
 
-    @media screen and (min-width: 992px){
+    @media screen and (min-width: 992px) {
         width: 35vw;
     }
 
     &:hover {
-        transition: .3s ease all;
+        transition: .3s ease-in-out all;
         @extend .shadow-blue;
         transform: scale(1.05);
         background-color: $white3;
@@ -532,13 +537,12 @@ a {
     transition: .3s ease all;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 10));
 
-
     &:hover {
         transform: translateY(-1rem);
     }
 }
 
-.card-home-content {
+.card-content {
     @extend .flex-elements;
     flex-direction: column;
     margin: 1rem 0;
@@ -546,28 +550,123 @@ a {
 }
 
 .card-tittle {
-    @extend .h2;
-    color: $gray5;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: $gray4;
     margin-bottom: 1rem;
-    border-bottom: 1px solid $blue5
+    border-bottom: 2px solid $blue2;
 }
 
 .card-text {
-    @extend .txt;
-    color: $gray6;
+    color: $black;
 }
 
 .card-btn {
     @extend .btn;
+    border: 1px solid $blue6;
     background-color: $blue3;
     margin: 1rem;
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 1rem;
     margin-bottom: -45px;
 
     &:hover {
         transform: translateY(1rem);
+        background-color: $blue6;
+        @extend .shadow;
     }
+}
+
+//estilos a la página servicios//
+
+#servicios {
+
+    .card {//
+        flex-direction: row;
+        width: 70vw;
+
+        @media screen and (max-width: 524px) {
+            flex-wrap: wrap;
+        }
+        
+        &-reverse {
+            @extend .card;
+            flex-direction: row-reverse;
+        }
+
+        & ul {
+            @include font(1.3rem, 400, $font-family);
+            letter-spacing: 1px;
+            line-height: 2rem;
+            list-style: disc inside;
+            margin-top: 1rem;
+        }
+    }
+
+    .card-content {
+        align-items: start;
+        width: fit-content;
+
+        @media screen and (max-width: 524px) {
+            align-items: center;
+        }
+
+    }
+
+    .card-reverse .card-content {
+        align-items: end;
+        text-align: end;
+
+        @media screen and (max-width: 524px) {
+            align-items: center;
+            text-align: start;
+        }
+
+        & li {
+            text-align: start;
+        }
+    }
+
+    .card-icon {
+        margin-top: 0;
+    }
+}
+
+//contacto//
+#contacto {
+
+    .form {
+        border: 1px solid $gray4;
+        @extend .shadow; 
+
+        & fieldset {
+            padding: 2rem;
+            margin: 2.5rem;
+    
+            & .form-group {
+                margin: 1.5rem 1rem;
+            }
+    
+            & legend {
+                margin: 1rem;
+            }
+    
+            & h4 {
+                margin-bottom: 0.5rem;
+            }
+    
+            & input {
+                width: 50vw;
+
+                &:hover {
+                    @extend .shadow-blue;
+                }
+            }
+        }
+    }
+    
+
 }
 
 //Efectos//
@@ -616,10 +715,9 @@ a {
     }
 }
 
-.slide-in-bottom1 {
+.slide-in-bottom {
     animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
 
 @keyframes fade-in {
     0% {
@@ -636,14 +734,15 @@ a {
 }
 
 @keyframes scale {
-	0% {
-		transform: scale(1);
-	}
+    0% {
+        transform: scale(1);
+    }
 
-	100% {
-		transform: scale(1.1);
-	}
+    100% {
+        transform: scale(1.1);
+    }
 }
+
 .scale {
     animation: scale 1s ease 0s 1 normal none;
 }
@@ -702,13 +801,3 @@ a {
 .slide-right {
     animation: slide-right 2s ease 0s 1 normal forwards;
 }
-
-
-.slide-in-bottom2 {
-    animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
-}
-
-.slide-in-bottom3 {
-    animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
-}
-

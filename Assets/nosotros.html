@@ -12,15 +12,11 @@
         content="marketing digital, redes sociales, desarrollo web, venta online, vender más, ecommerce, tienda online, vender en internet">
 
     <title>Nosotros - Digitaliz.AR | Soluciones digitales</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    </style>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <script src="../bootstrap/jquery/jquery.slim.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="../css/main.css">
     <!--css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--icons-->
     <link rel="shortcut icon" href="../img/Favicon.png">
 </head>
 
@@ -28,209 +24,216 @@
 
 <body>
     <header class="header">
-        <div class="container-fluid bkg-transparent">
-            <div class="row menu shadow queri-header">
-                <!--manu-->
-                <div class="col-6 col-lg-3">
-                    <!--logo-->
-                    <picture>
-                        <img Class="logo" src="../img/Logotipo.png" alt="Digitaliz.Ar Logotipo">
-                    </picture>
-                </div>
+        <div class="gs-grid">
+            <div class="col">
+                <nav class="navbar">
 
-                <div class="col-6 col-lg-6 nav-tabs menu-phone">
-                    <!--navcelulares-->
+                    <a href="../index.html">
+                        <img Class="logo" src="../img/Logotipo.png"
+                            alt="Logo de Digitaliz.Ar, Servicio de soluciones digitales para empresas">
+                    </a>
 
-                    <nav class="navbar navbar-dark bg-primary end">
-                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                            data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="true"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="check-btn">
+                        <i class="fa fa-bars fa-2x" alt="menu icon"></i>
+                    </label>
+                    <!--boton del menu-->
 
-                        <div class="navbar-collapse collapse show" id="navbarColor02">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../index.html">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./servicios.html">Servicios</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="./sobrenosotros.html">Nosotros</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./blog.html">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./contacto.html">Contacto</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+                    <ul class="menu-container">
+                        <li class="menu-items">
+                            <a class="link link-2" href="../index.html">
+                                <h3>Inicio</h3>
+                            </a>
+                        </li>
+                        <li class="menu-items">
+                            <a class="link link-2" href="./servicios.html">
+                                <h3>Servicios</h3>
+                            </a>
+                        </li>
+                        <li class="menu-items">
+                            <a class="link link-2 active" href="./nosotros.html">
+                                <h3>Nosotros</h3>
+                            </a>
+                        </li>
+                        <li class="menu-items">
+                            <a class="link link-2" href="./contacto.html">
+                                <h3>Contacto</h3>
+                            </a>
+                        </li>
+                        <li class="menu-items">
+                            <a class="link link-2" href="./blog.html">
+                                <h3>Blog</h3>
+                            </a>
+                        </li>
+                    </ul>
 
-                <div class="col-6 col-lg-6 menu-desktop">
-                    <menu class="slide-right">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./servicios.html">Servicios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="./sobrenosotros.html">Nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./contacto.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </menu>
-                </div>
+                    <buttom name="WhatsApp buttom" type="buttom">
+                        <a class="btn-wsp" href="">
+                            <img class="social-icon" src="../img/WhatsApp-icon.png"
+                                alt="logo de WhatsApp. Enlace directo a nuestro número de WhatsApp">
+                            <span>
+                                <h3>Contactanos</h3>
+                            </span>
+                        </a>
+                    </buttom>
+                    <!--boton de wsp-->
+                </nav>
 
-                <div class="col-lg-3 btn-contact">
-                    <!--botón de contacto en nav-->
-                    <a class="button shadow-animate" href="./contacto.html">CONTACTANOS</a>
+                <div class="main-tittle">
+                    <h1>Nuestra empresa</h1>
+                    <div class="main-divisor"></div>
+                    <h2>Somos expertos en estratégias digitales integrales para negocios y empresas</h2>
                 </div>
             </div>
         </div>
     </header>
+    <!--Header-->
 
-    <main class="main">
-        <div class="white-space"></div>
+    <main>
+        <section id="nosotros">
+            <div class="gs-grid">
+                <div class="col">
+                    <div class="container">
 
-        <div class="container">
-            <div class="main-tittle">
-                <h1 class="h1">SOLUCIONES DIGITALES</h1>
-                <h2 class="h2">A medida para empresas y negocios</h2>
-                <p class="txt">Especialistas en diseño, desarrollo web, marketing digital, estratégias de ventas. </p>
-            </div>
-        </div>
+                        <div class="white-space"></div>
 
-        <div class="white-space"></div>
+                        <div class="divisor"></div>
 
-        <div class="divisor"></div>
+                        <div class="container">
+                            <div class="row">
 
-        <div class="container">
-            <div class="row">
+                                <div class="col-12">
+                                    <article class="cards-inicio">
+                                        <picture class="fade-in">
+                                            <img class="pic-teamwork" src="../img/Empresa_teamwork.png"
+                                                alt="teamwork" />
+                                        </picture>
 
-                <div class="col-12">
-                    <article class="cards-inicio">
-                        <picture class="fade-in">
-                            <img class="pic-teamwork" src="../img/Empresa_teamwork.png" alt="teamwork" />
-                        </picture>
+                                        <p class="txt">
+                                            Somos una empresa jóven que brinda soluciones digitales para negocios y
+                                            empresas.
+                                            Acompañamos los procesos de transformación digital, entendiendo las
+                                            particularidades de cada negocio, su rubro y sus consumidores.
+                                            <br /> <br />
+                                            Creamos entornos virtuales en donde puedas mostrar y describir a tu marca,
+                                            tus productos y
+                                            servicios con fin de que tengas nuevos puntos de contactos con potenciales
+                                            clientes y tu
+                                            equipo de ventas reciba más posibilidades de conversión.
+                                            <br /> <br />
+                                            Comprendemos las dinámicas del público dentro de las plataformas de internet
+                                            y nos apoyamos
+                                            en las herramientas de pauta paga para llegar a los consumidores target de
+                                            tu negocio.
+                                            Además desglozamos las instancias de contacto de los consumidores con tu
+                                            marca para crear
+                                            todas las etapas del journey
+                                            <br /> <br />
+                                            Incorporamos tecnologías a tus procesos para automatizar tareas y liberar
+                                            tiempo de tu
+                                            equipo de trabajo. También tendrás datos organizados, centralizados y
+                                            obtener insights de valor a partir de su análisis.
+                                        </p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
 
-                        <p class="txt">
-                            Somos una empresa jóven que brinda soluciones digitales para negocios y empresas.
-                            Acompañamos los procesos de transformación digital, entendiendo las
-                            particularidades de cada negocio, su rubro y sus consumidores.
-                            <br /> <br />
-                            Creamos entornos virtuales en donde puedas mostrar y describir a tu marca, tus productos y
-                            servicios con fin de que tengas nuevos puntos de contactos con potenciales clientes y tu
-                            equipo de ventas reciba más posibilidades de conversión.
-                            <br /> <br />
-                            Comprendemos las dinámicas del público dentro de las plataformas de internet y nos apoyamos
-                            en las herramientas de pauta paga para llegar a los consumidores target de tu negocio.
-                            Además desglozamos las instancias de contacto de los consumidores con tu marca para crear
-                            todas las etapas del journey
-                            <br /> <br />
-                            Incorporamos tecnologías a tus procesos para automatizar tareas y liberar tiempo de tu
-                            equipo de trabajo. También tendrás datos organizados, centralizados y
-                            obtener insights de valor a partir de su análisis.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </div>
+                        <div class="white-space"></div>
 
-        <div class="white-space"></div>
+                        <div class="container">
+                            <div class="row queri-main">
+                                <!--contenedor cards-->
+                                <div class="col-12 col-lg-4">
+                                    <article class="cards-inicio">
+                                        <!--card1-->
+                                        <h3 class="h3">DATA DRIVEN</h3>
+                                        <p class="txt">Nos enfocamos en obtener datos de valor, analizarlos y en base a
+                                            eso tomar
+                                            decisiones certeras para nuevas estratégias.</p>
+                                    </article>
+                                </div>
 
-        <div class="container">
-            <div class="row queri-main">
-                <!--contenedor cards-->
-                <div class="col-12 col-lg-4">
-                    <article class="cards-inicio">
-                        <!--card1-->
-                        <h3 class="h3">DATA DRIVEN</h3>
-                        <p class="txt">Nos enfocamos en obtener datos de valor, analizarlos y en base a eso tomar
-                            decisiones certeras para nuevas estratégias.</p>
-                    </article>
-                </div>
+                                <div class="divisor"></div>
 
-                <div class="divisor"></div>
+                                <div class="col-12 col-lg-4">
+                                    <article class="cards-inicio">
+                                        <!--card2-->
+                                        <h3 class="h3">RESULTADOS</h3>
+                                        <p class="txt">Seteamos objetivos SMART y aplicamos una forma de medirlos y
+                                            analizarlos
+                                            para hacer el seguimiento de su cumplimiento.</p>
+                                    </article>
+                                </div>
 
-                <div class="col-12 col-lg-4">
-                    <article class="cards-inicio">
-                        <!--card2-->
-                        <h3 class="h3">RESULTADOS</h3>
-                        <p class="txt">Seteamos objetivos SMART y aplicamos una forma de medirlos y analizarlos
-                            para hacer el seguimiento de su cumplimiento.</p>
-                    </article>
-                </div>
+                                <div class="divisor"></div>
 
-                <div class="divisor"></div>
+                                <div class="col-12 col-lg-4">
+                                    <article class="cards-inicio">
+                                        <!--card3-->
+                                        <h3 class="h3">CRECIMIENTO ESCALABLE</h3>
+                                        <p class="txt">Buscamos estratégias y metodologías para hacer crecimiento
+                                            constante y
+                                            escalable para cada negocio. </p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="col-12 col-lg-4">
-                    <article class="cards-inicio">
-                        <!--card3-->
-                        <h3 class="h3">CRECIMIENTO ESCALABLE</h3>
-                        <p class="txt">Buscamos estratégias y metodologías para hacer crecimiento constante y
-                            escalable para cada negocio. </p>
-                    </article>
-                </div>
-            </div>
-        </div>
+                        <div class="divisor"></div>
+                        <div class="white-space"></div>
 
-        <div class="divisor"></div>
-        <div class="white-space"></div>
-              
     </main>
 
     <footer class="bkg-img">
-        <div class="container-fluid bkg-transparent">
-            <div class="row footer queri-footer">
-                <!--contenedor social-->
-                <div class="col-12 col-lg-4">
-                    <picture>
-                        <img Class="logo" src="../img/Logotipo.png" alt="Digitaliz.Ar Logotipo">
-                    </picture>
-                </div>
+        <div class="gs-grid">
+            <div class="col footer">
+                <a href="../index.html">
+                    <img Class="logo" src="../img/Logotipo.png"
+                        alt="Logo de Digitaliz.Ar, Servicio de soluciones digitales para empresas">
+                </a>
 
-                <div class="col-12 col-lg-4 h4">
-                    <picture>
-                        <img src="../img/Phone-icon.png" class="social-icon" />
-                        011 1234567890
-                    </picture>
+                <div class="social-bar">
 
-                    <picture>
-                        <img src="../img/WhatsApp-icon.png" class="social-icon" />
-                        +54 9 1234567890
-                    </picture>
-                </div>
+                    <span>
+                        <h4 class="social-tittle">Canales de contacto</h4>
+                    </span>
 
-                <div class="col-12 col-lg-4 h4">
-                    <picture>
-                        <img src="../img/Instagram-icon.png" class="social-icon" />
-                        @Digitalizar-Agencia
-                    </picture>
+                    <div class="social-container">
 
-                    <picture>
-                        <img src="../img/Gmail-icon.png" class="social-icon" />
-                        Contacto@digitalizaragencia.com
-                    </picture>
+                        <a href="" class="social-item">
+                            <img src="../img/Phone-icon.png" class="social-icon"
+                                alt="ícono de teléfono. número de teléfono de Digitalizar ">
+                            <span>
+                                <h4>011 1234567890</h4>
+                            </span>
+                        </a>
+
+                        <a href="" class="social-item">
+                            <img src="../img/WhatsApp-icon.png" class="social-icon"
+                                alt="ícono de Whatsapp. Número de WhatsApp de Digitalizar ">
+                            <span>
+                                <h4>+54 9 1234567890</h4>
+                            </span>
+                        </a>
+
+                        <a href="" class="social-item">
+                            <img src="../img/Instagram-icon.png" class="social-icon"
+                                alt="ícono de Instagram. Instagram de Digitalizar" />
+                            <span>
+                                <h4>@Digitalizar-Agencia</h4>
+                            </span>
+                        </a>
+
+                        <a href="" class="social-item">
+                            <img src="../img/Gmail-icon.png" class="social-icon"
+                                alt="ícono de mail. Mail de Digitalizar" />
+                            <span>
+                                <h4>Contacto@digitalizaragencia.com</h4>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <div class="container">
-                <!--copyright-->
-                <div class="copyright">Todos los derechos reservados Digitaliz.AR 2022.</div>
-            </div>
-        </div>
     </footer>
 </body>
-
-</html>
