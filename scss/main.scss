@@ -32,34 +32,6 @@ $twitter: #1DA1F2;
 $facebook: #4267B2;
 $youtube: #FF0000;
 
-//flex// 
-@mixin flex ($flex, $content, $item, $direction) {
-    display: $flex;
-    justify-content: $content;
-    align-items: $item;
-    flex-direction: $direction;
-}
-
-.white-space {
-    width: 100vw;
-    padding: 50px 0;
-    display: block;
-}
-
-.divisor {
-    border-top: 0.2rem solid $blue3;
-    height: 2px;
-    width: 15rem;
-    margin: 1rem auto;
-    @extend .fade-in;
-}
-
-.banner {
-    width: auto;
-    height: 20vw;
-    @extend .fade-in
-}
-
 .copyright {
     text-align: center;
     color: $white2;
@@ -67,13 +39,6 @@ $youtube: #FF0000;
     border-top: 1px solid $gray4;
     padding: 1rem 0;
     @extend .slide-in-bottom;
-}
-
-.pic-teamwork {
-    width: 35vw;
-    height: auto;
-    border-radius: 20px;
-    @extend .fade-in;
 }
 
 //desde acá!//
@@ -94,14 +59,14 @@ $font-especial: 'Poppins', sans-serif;
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
     
 body {
     font-size: 62.5%;
-    width: 100vw;
+    max-width: 100%;
     min-height: 100vh;
 }
 
@@ -111,6 +76,12 @@ a {
 }
 
 main {
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+section {
+    max-width: 100%;
     overflow: hidden;
 }
 
@@ -150,6 +121,10 @@ h1 {
     @media screen and (max-width: 564px) {
         font-size: 5rem;
     }
+
+    @media screen and (max-width: 340px) {
+        font-size: 3rem;
+    }
 }
 
 //título main//
@@ -173,13 +148,13 @@ h3 {
 //botones del nav//
 
 h4 {
-    @include font(1.2rem, 400, $font-family);
+    @include font(1.4rem, 600, $font-family);
 }
 
 //subtitlo cards//
 
 p {
-    @include font(1.3rem, 500, $font-family);
+    @include font(1.5rem, 500, $font-family);
     letter-spacing: 1px;
     line-height: 2rem;
 }
@@ -193,7 +168,7 @@ p {
 //texto destacado//
 
 .header {
-    width: 100%;
+    max-width: 100%;
     height: 100vh;
     background-image: url(../img/bannerhome.png);
     background-repeat: no-repeat;
@@ -201,19 +176,18 @@ p {
     background-attachment: fixed;
     background-size: cover;
     overflow: hidden;
-    @extend .fade-in;
 }
 
 .navbar {
-    width: 100%;
+    width: 100vw;
     padding: 1rem 0;
-    @extend .flex-elements, .bkg-transparent, .drop-shadow;
+    @extend .flex-elements, .bkg-transparent, .drop-shadow, .fade-in;
     overflow: hidden;
+    z-index: 1;
 
     @media screen and (max-width: 340px) {
         flex-direction: column;
     }
-
 }
 
 .logo {
@@ -222,7 +196,7 @@ p {
     width: auto;
     padding: 0.2rem;
     border-right: 0.2rem solid $gray4;
-    @extend .slide-left; 
+    @extend.slide-left; 
 
     @media screen and (min-width: 769px) {
         height: 6rem;
@@ -233,7 +207,6 @@ p {
 .menu-container {
     list-style: none;
     padding: 2rem;
-    z-index: 1;
     @extend .fade-in;
 
     @media screen and (max-width: 768px) {
@@ -242,7 +215,7 @@ p {
         justify-content: space-evenly;
         border-top: 0.2rem solid $gray4;
         position: absolute;
-        width: 100%;
+        width: 100vw;
         background: $gray6;
         top: 90px;
         height: 0px;
@@ -423,6 +396,7 @@ p {
 }
 
 .main-tittle {
+    width: 90vw;
     position: absolute;
     bottom: 5rem;
     text-align: center;
@@ -438,6 +412,7 @@ p {
     border-top: 3px solid $blue2;
     transform-origin: center;
     transition: .3s ease-in-out all;
+    @extend .fade-in;
 
     &:hover {
         width: 70%;
@@ -453,7 +428,8 @@ p {
 }
 
 .footer {
-    @extend .bkg-transparent, .flex-elements;
+    max-width: 100%;
+    @extend .bkg-transparent, .flex-elements, .fade-in;
     overflow: hidden;
 
     @media screen and (max-width: 768px) {
@@ -472,6 +448,7 @@ p {
 .social-container {
     @extend .flex-elements;
     margin-top: 1rem;
+    overflow: hidden;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -492,6 +469,7 @@ p {
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
+    @extend .slide-in-bottom;
 
     &:hover {
         @extend .shadow;
@@ -504,7 +482,7 @@ p {
     margin: 1.5rem;
     padding: 3.5rem 1.5rem;
     border-radius: 0.5rem;
-    @extend .shadow, .flex-elements, .slide-in-bottom;
+    @extend.shadow,.flex-elements;
     width: 80vw;
     margin: 5rem 2.5rem;
     background-color: $white1;
@@ -523,10 +501,10 @@ p {
     }
 
     &:hover {
-        transition: .3s ease-in-out all;
         @extend .shadow-blue;
+        background-color: $white2;
+        transition: .3s ease all;
         transform: scale(1.05);
-        background-color: $white3;
     }
 }
 
@@ -543,7 +521,7 @@ p {
 }
 
 .card-content {
-    @extend .flex-elements;
+    @extend .flex-elements, .slide-right;
     flex-direction: column;
     margin: 1rem 0;
     padding: 0 1rem;
@@ -551,7 +529,7 @@ p {
 
 .card-tittle {
     padding-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     color: $gray4;
     margin-bottom: 1rem;
@@ -596,7 +574,7 @@ p {
         }
 
         & ul {
-            @include font(1.3rem, 400, $font-family);
+            @include font(1.4rem, 500, $font-family);
             letter-spacing: 1px;
             line-height: 2rem;
             list-style: disc inside;
@@ -607,17 +585,19 @@ p {
     .card-content {
         align-items: start;
         width: fit-content;
+        @extend .slide-left;
 
         @media screen and (max-width: 524px) {
             align-items: center;
         }
-
+        
     }
 
     .card-reverse .card-content {
         align-items: end;
         text-align: end;
-
+        @extend .slide-right;
+        
         @media screen and (max-width: 524px) {
             align-items: center;
             text-align: start;
@@ -630,6 +610,7 @@ p {
 
     .card-icon {
         margin-top: 0;
+        @extend .slide-in-bottom;
     }
 }
 
@@ -665,11 +646,78 @@ p {
             }
         }
     }
-    
-
 }
 
+#nosotros {
+
+    .pic-teamwork {
+        width: 60vw;
+        height: auto;
+        border-radius: 20px;
+        @extend .slide-left;
+        filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 10));
+
+        @media screen and (min-width: 768px) {
+            width: 40vw;
+        }
+    }
+    
+    .card-nosotros {
+        @extend .card;
+        width: 90vw;
+
+        &:hover {
+            transform: scale(1);
+        }
+
+        & .card-text{
+            width: 70vw;
+            color: $black;
+            @extend .slide-right;
+    
+            @media screen and (min-width: 768px) {
+                width: 40vw;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    .card-valores{
+        @extend .card;
+        max-width: 30rem;
+        max-height: 30rem;
+    }
+}
+
+#blog {
+    article .card-blog {
+        @extend .card, .flex-elements;
+        border: 1px solid $gray5;
+        background: #fff url(../img/blog-bkg.png) left center/cover repeat;
+        transition: .3s ease all;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {  
+            content: "";
+            background-color: rgba(1, 51, 105, 0.8);
+        }
+
+        .card-tittle{
+            color: $gray2;
+        }
+    }
+}
+
+
 //Efectos//
+
+.slide-left {
+    animation: slide-left 3s ease 0s 1 normal forwards;
+}
 
 @keyframes slide-left {
     0% {
@@ -683,8 +731,8 @@ p {
     }
 }
 
-.slide-left {
-    animation: slide-left 2s ease 0s 1 normal forwards;
+.slide-right {
+    animation: slide-right 3s ease 0s 1 normal forwards;
 }
 
 @keyframes slide-right {
@@ -699,24 +747,20 @@ p {
     }
 }
 
-.slide-right {
-    animation: slide-right 2s ease 0s 1 normal forwards;
+.slide-in-bottom {
+    animation: slide-in-bottom 4s ease 0s 1 normal forwards;
 }
 
 @keyframes slide-in-bottom {
     0% {
-        transform: translateY(1000px);
         opacity: 0;
+        transform: translateY(250px);
     }
 
     100% {
+        opacity: 2;
         transform: translateY(0);
-        opacity: 1;
     }
-}
-
-.slide-in-bottom {
-    animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes fade-in {
@@ -730,74 +774,5 @@ p {
 }
 
 .fade-in {
-    animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-@keyframes scale {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-.scale {
-    animation: scale 1s ease 0s 1 normal none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*keyframes*/
-@keyframes slide-left {
-    0% {
-        opacity: 0;
-        transform: translateX(-250px);
-    }
-
-    100% {
-        opacity: 2;
-        transform: translateX(0);
-    }
-}
-
-.slide-left {
-    animation: slide-left 2s ease 0s 1 normal forwards;
-}
-
-@keyframes slide-right {
-    0% {
-        opacity: 0;
-        transform: translateX(250px);
-    }
-
-    100% {
-        opacity: 2;
-        transform: translateX(0);
-    }
-}
-
-.slide-right {
-    animation: slide-right 2s ease 0s 1 normal forwards;
+    animation: fade-in 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
