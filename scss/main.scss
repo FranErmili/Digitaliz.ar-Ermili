@@ -155,6 +155,7 @@ p {
 .header {
     max-width: 100%;
     height: 100vh;
+    min-height: 524px;
     background-image: url(../img/bannerhome.png);
     background-repeat: no-repeat;
     background-position: top center;
@@ -383,7 +384,7 @@ p {
 .main-tittle {
     width: 90vw;
     position: absolute;
-    bottom: 5rem;
+    top: 30rem;
     text-align: center;
     padding: 2rem;
 
