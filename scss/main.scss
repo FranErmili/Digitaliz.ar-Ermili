@@ -389,6 +389,10 @@ p {
     padding: 2rem;
 
     @extend .slide-in-bottom;
+
+    @media screen and (max-height: 340px) {
+        top: 20rem;
+    }
 }
 
 .main-divisor {
